@@ -1,0 +1,26 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	input := "1 9 3 4 -5"
+	var result string
+
+	workString := strings.Split(input, " ")
+
+	maxNumber := workString[0]
+	minNumber := workString[0]
+
+	for i := 0; i < len(workString); i++ {
+		if minNumber < workString[i] {
+			minNumber = workString[i]
+		}
+		if maxNumber > workString[i] {
+			maxNumber = workString[i]
+		}
+	}
+	result = minNumber + " " + maxNumber
+	fmt.Println(result)
